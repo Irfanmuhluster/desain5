@@ -1,0 +1,88 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    .banner-items {
+        display: grid;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        .box {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            z-index: 1;
+            @include media-breakpoint-up(md) {
+                position: relative;
+                background-color: $orange-100;            
+                padding-left: 3rem;
+                ::after {
+                    content: " ";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    
+                    background-color: $orange-100;
+                    border-bottom: 3px solid $orange-500;
+                    border-right: 20px solid $orange-500;
+                    
+                    transform-origin: bottom left;
+                    -ms-transform: skew(-30deg, 0deg);
+                    -webkit-transform: skew(-30deg, 0deg);
+                    transform: skew(-30deg, 0deg);
+                }
+            }
+            padding-left: 0rem;
+            // background-image: linear-gradient(to bottom, rgba(180, 83, 9, 0.75), transparent);
+        }
+        .banner-items-right {
+            @include media-breakpoint-up(md) {
+                padding-right: 6rem;
+                padding-top: 6rem;
+                top: initial;
+                position: initial;
+                width: 100%;
+                height: 100vh;
+                // z-index: 0;
+            }
+            padding-right: 0rem;
+            padding-top: 0rem;
+            top: -135px;
+            position: relative;
+            z-index: -1;
+
+            padding-bottom: 6rem;
+        }
+        .banner-items-left {
+            @include media-breakpoint-up(md) {          
+                left: 4rem;
+            }
+            left: 0rem;
+            top: 4rem;
+            padding: 2rem;
+            border-radius: $border-radius;
+            .welcome-title {
+                color: #a85418;
+                // margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: $font-size-lg;
+                font-weight: 700;
+            }
+            .welcome-desc {
+                // @include text-base();
+                line-height: 1.625;
+                font-weight: 500;
+                letter-spacing: 0.025em;
+                margin-bottom: 1.5rem;
+                color: $gray-800;
+            }
+        }
+    }
+}
