@@ -303,14 +303,42 @@ body {
     padding-left: 15px;
 }
 
-// button
-// Mixin to create a bootstrap button with custom colors
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    .navbar-nav .nav-link {
+        color: white !important;
+        @include media-breakpoint-down (md) {
+            color: rgba(0, 0, 0, 0.9) !important;
+        }
+    }
+    z-index: 11;
+    @include media-breakpoint-down(md) { 
+        background-color: #ffff !important;
+     }
+}
 
-// .navbar-light .navbar-nav .nav-link {
-//     @include media-breakpoint-up(md) {
-//         color: white !important;
-//     }
-// }
+.navbar-dark .navbar-nav .nav-link {
+    @include media-breakpoint-down(md) { 
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+.navbar-sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #ffff;
+    color: #4b5563;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    z-index: 11;
+}
 
 ul {
     list-style-type: none;
